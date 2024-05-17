@@ -8,7 +8,7 @@ impl ScreenCaptureAccess {
     /// Return the same result as preflight.
     #[inline]
     pub fn request(&self) -> bool {
-        unsafe { CGRequestScreenCaptureAccess() == 1 }
+        unsafe { (CGRequestScreenCaptureAccess() & 1) == 1 }
     }
 
     /// Return `true` if has access
